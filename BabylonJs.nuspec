@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>WebSharper.BabylonJs</id>
+    <title>WebSharper.BabylonJs 1.11</title>
+    <version>2.5.0</version>
+    <authors>IntelliFactory</authors>
+    <description>WebSharper bindings to Babylon JS (1.11)</description>
+    <language>en-US</language>
+    <projectUrl>http://websharper.com</projectUrl>
+    <licenseUrl>http://websharper.com/licensing</licenseUrl>
+    <tags>f# fsharp cross-platform 3d graphics</tags>
+    <dependencies>
+      <group>
+        <dependency id="WebSharper.TypeScript.Lib" version="2.5.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="README.md" target="docs" />
+    <file src="build\IntelliFactory.WebSharper.BabylonJs.dll" target="lib\net40" />
+  </files>
+</package>

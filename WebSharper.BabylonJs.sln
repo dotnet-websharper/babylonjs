@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{0A6CF7B3-5824-46CA-A429-9A8E5A3BAE23}"
+	ProjectSection(SolutionItems) = preProject
+		build.cmd = build.cmd
+		BabylonJs.nuspec = BabylonJs.nuspec
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{19DE75CC-74D0-4915-92EA-0EFDF28D96E4}"
+	ProjectSection(SolutionItems) = preProject
+		tools\build.fsx = tools\build.fsx
+		tools\clean.fsx = tools\clean.fsx
+		tools\configure.fsx = tools\configure.fsx
+		tools\utility.fsx = tools\utility.fsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "typings", "typings", "{8AD39450-9D5B-4C78-A716-3F911F8F590E}"
+	ProjectSection(SolutionItems) = preProject
+		typings\babylon.min.d.ts = typings\babylon.min.d.ts
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
