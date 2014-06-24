@@ -1,15 +1,15 @@
-# WebSharper.KendoUI
+# WebSharper.BabylonJs
 
-Version: 2014.1.318
+Version: 1.11
 
 ## Updating
 
 Change the version in the following files:
 
     tools/build.fsx
-    KendoUI.nuspec
+    BabylonJs.nuspec
     README.md
     
 Update the following files:
 
-    typings/kendo.all.d.ts
+    babylon.1.11.js
