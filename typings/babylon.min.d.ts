@@ -529,37 +529,38 @@ declare module BABYLON {
 
     // babylon.tools.d.ts
     class Tools {
-        function ExtractMinAndMax(positions: number[], start: number, count: number): Object;
-        function GetPointerPrefix(): string;
-        function QueueNewFrame(func: Function): void;
-        function RequestFullscreen(element: HTMLElement): void;
-        function ExitFullscreen(): void;
-        var BaseUrl: string;
-        function LoadImage(url: string, onload: Function, onerror: Function, database: Database): HTMLImageElement;
-        function LoadFile(url: string, callback: Function, progressCallback: Function): void;
-        function isIE(): boolean;
-        function WithinEpsilon(a: number, b: number);
-        function cloneValue(source: Object, destinationObject: Object): void;
-        function DeepCopy(source: Object, destination: Object, doNotCopyList: string[], mustCopyList: string[]);
-        var fpsRange: number;
-        var previousFramesDuration: number[];
-        function GetFps(): number;
-        function GetDeltaTime(): number;
-        function _MeasureFps(): void;
+        ExtractMinAndMax(positions: number[], start: number, count: number): Object;
+        GetPointerPrefix(): string;
+        QueueNewFrame(func: Function): void;
+        RequestFullscreen(element: HTMLElement): void;
+        ExitFullscreen(): void;
+        BaseUrl: string;
+        LoadImage(url: string, onload: Function, onerror: Function, database: Database): HTMLImageElement;
+        LoadFile(url: string, callback: Function, progressCallback: Function): void;
+        isIE(): boolean;
+        WithinEpsilon(a: number, b: number);
+        cloneValue(source: Object, destinationObject: Object): void;
+        DeepCopy(source: Object, destination: Object, doNotCopyList: string[], mustCopyList: string[]);
+        fpsRange: number;
+        previousFramesDuration: number[];
+        GetFps(): number;
+        GetDeltaTime(): number;
+        _MeasureFps(): void;
     
-        class SmartArray {
-            data: Array;
-            length: number;
+    }
 
-            constructor(capacity: number);
-
-            push(value: Object): void;
-            pushNoDuplicate(value: Object): void;
-            reset(): void;
-            concat(array: SmartArray): void;
-            concatWithNoDuplicate(array: SmartArray): void;
-            indexOf(value: Object): number;
-        }
+    class SmartArray<T> {
+        data: Array<T>;
+        length: number;
+    
+        constructor(capacity: number);
+    
+        push(value: Object): void;
+        pushNoDuplicate(value: Object): void;
+        reset(): void;
+        concat(array: SmartArray<T>): void;
+        concatWithNoDuplicate(array: SmartArray<T>): void;
+        indexOf(value: Object): number;
     }
 
     //babylon.sceneLoader.d.ts
@@ -583,7 +584,7 @@ declare module BABYLON {
     }
     
     // babylon.database.d.ts
-     class Database {
+    class Database {
         currentSceneUrl: string;
         db: Database;
         enableSceneOffline: boolean;
@@ -612,7 +613,7 @@ declare module BABYLON {
     }
     
     // babylon.animation.d.ts
-     class Animation {
+    class Animation {
         name: string;
         targetProperty: string;
         targetPropertyPath: string[];
@@ -640,7 +641,7 @@ declare module BABYLON {
         static ANIMATIONLOOPMODE_CONSTANT: number;
     }
     
-        class _Animatable {
+    class _Animatable {
         target: Object;
         fromFrame: number;
         toFrame: number;
@@ -657,7 +658,7 @@ declare module BABYLON {
     }
     
     // babylon.bones.d.ts
-        class Bone {
+    class Bone {
         name: string;
         _skeleton: Skeleton;
         _matrix: Matrix;
@@ -678,7 +679,7 @@ declare module BABYLON {
         markAsDirty(): void;
     }
     
-     class Skeleton {
+    class Skeleton {
         id: number;
         name: string;
         bones: Bone[];
@@ -694,7 +695,7 @@ declare module BABYLON {
     }
     
     // babylon.camera.d.ts
-      class Camera {
+    class Camera {
         name: string;
         id: string;
         position: Vector3;
@@ -722,7 +723,7 @@ declare module BABYLON {
         getProjectionMatrix(): Matrix;
     }
     
-     class FreeCamera extends Camera {
+    class FreeCamera extends Camera {
         cameraDirection: Vector3;
         cameraRotation: Vector2;
         rotation: Vector3;
@@ -748,7 +749,7 @@ declare module BABYLON {
         _checkInputs();
     }
     
-     class ArcRotateCamera extends Camera {
+    class ArcRotateCamera extends Camera {
         alpha: number;
         beta: number;
         radius: number;
@@ -774,7 +775,7 @@ declare module BABYLON {
         setPosition(position: Vector3): void;
     }
     
-     class DeviceOrientationCamera extends FreeCamera {
+    class DeviceOrientationCamera extends FreeCamera {
         angularSensibility: number;
         moveSensibility: number;
 
@@ -788,7 +789,7 @@ declare module BABYLON {
         _initialOrientationBeta: number;
     }
     
-      class TouchCamera extends FreeCamera {
+    class TouchCamera extends FreeCamera {
         _offsetX: number;
         _offsetY: number;
         _pointerCount: number;
@@ -800,7 +801,7 @@ declare module BABYLON {
     }
     
     // babylon.collider.d.ts
-     interface CollisionResponse {
+    interface CollisionResponse {
         position: Vector3;
         velocity: Vector3;
     }
@@ -825,7 +826,7 @@ declare module BABYLON {
         _getResponse(pos: Vector3, vel: Vector3): CollisionResponse;
     }
     
-     class CollisionPlane {
+    class CollisionPlane {
         normal: Vector3;
         origin: Vector3;
         equation: number[];
@@ -897,10 +898,10 @@ declare module BABYLON {
         static intersects(sphere0: BoundingSphere, sphere1: BoundingSphere): boolean;
     }
     
-    class Octree {
-        blocks: OctreeBlock[];
+    class Octree<T> {
+        blocks: OctreeBlock<T>[];
         _maxBlockCapacity: number;
-        _selection: Tools.SmartArray;
+        _selection: SmartArray<T>;
 
         constructor(maxBlockCapacity: number);
 
@@ -908,10 +909,10 @@ declare module BABYLON {
         addMesh(mesh: Mesh): void;
         select(frustrumPlanes: Plane[]): void;
 
-        static _CreateBlocks(worldMin: Vector3, worldMax: Vector3, meshes: Mesh[], maxBlockCapacity: number, target: OctreeBlock): void;
+        static _CreateBlocks<T>(worldMin: Vector3, worldMax: Vector3, meshes: Mesh[], maxBlockCapacity: number, target: OctreeBlock<T>): void;
     }
     
-    class OctreeBlock {
+    class OctreeBlock<T> {
         subMeshes: Mesh[];
         meshes: Mesh[];
         _capacity: number;
@@ -923,7 +924,7 @@ declare module BABYLON {
 
         addMesh(mesh: Mesh): void;
         addEntries(meshes: Mesh[]): void;
-        select(frustrumPlanes: Plane[], selection: Tools.SmartArray): void;
+        select(frustrumPlanes: Plane[], selection: SmartArray<T>): void;
     }
     
     // babylon.layer.d.ts
@@ -981,7 +982,7 @@ declare module BABYLON {
         constructor(name: string, position: Vector3, direction: Vector3, angle: number, exponsent: number, scene: Scene);
     }
     
-     class HemisphericLight {
+    class HemisphericLight {
         direction: Vector3;
         diffuse: Color3;
         specular: Color3;
@@ -1003,7 +1004,7 @@ declare module BABYLON {
         constructor(name: string, direction: Vector3, scene: Scene);
     }
     
-        class ShadowGenerator {
+    class ShadowGenerator {
         _light: Light;
         _scene: Scene;
 
