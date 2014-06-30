@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>WebSharper.BabylonJs</id>
-    <title>WebSharper.BabylonJs 1.11</title>
+    <title>WebSharper.BabylonJs 1.12</title>
     <version>2.5.0</version>
     <authors>IntelliFactory</authors>
-    <description>WebSharper bindings to Babylon JS (1.11)</description>
+    <description>WebSharper bindings to Babylon JS (1.12)</description>
     <language>en-US</language>
     <projectUrl>http://websharper.com</projectUrl>
     <licenseUrl>http://websharper.com/licensing</licenseUrl>

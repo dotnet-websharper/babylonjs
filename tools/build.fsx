@@ -10,7 +10,7 @@ module C = IntelliFactory.WebSharper.TypeScript.Compiler
 module U = Utility
 type JQuery = IntelliFactory.WebSharper.JQuery.Resources.JQuery
 
-let dts = U.loc ["typings/babylon.min.d.ts"]
+let dts = U.loc ["typings/babylon.d.ts"]
 let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/IntelliFactory.WebSharper.TypeScript.Lib.dll"]
 let snk = U.loc [Environment.GetEnvironmentVariable("INTELLIFACTORY"); "keys/IntelliFactory.snk"]
 
@@ -30,11 +30,11 @@ let opts =
             Verbosity = C.Level.Verbose
             EmbeddedResources =
                 [
-                    C.EmbeddedResource.FromFile("babylon.1.11.js")
+                    C.EmbeddedResource.FromFile("babylon.1.12.js")
                 ]
             WebSharperResources =
                 [
-                    C.WebSharperResource.Create("Scripts", "babylon.1.11.js")
+                    C.WebSharperResource.Create("Scripts", "babylon.1.12.js")
                 ]
     }
 
