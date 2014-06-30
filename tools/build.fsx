@@ -24,7 +24,7 @@ let opts =
     {
         C.Options.Create("IntelliFactory.WebSharper.BabylonJs", [dts]) with
             AssemblyVersion = Some (Version "2.5.0.0")
-            Renaming = C.Renaming.RemovePrefix "BABYLON"
+//            Renaming = C.Renaming.RemovePrefix ""
             References = [C.ReferenceAssembly.File lib; C.ReferenceAssembly.File fsCore]
             StrongNameKeyFile = Some snk
             Verbosity = C.Level.Verbose
