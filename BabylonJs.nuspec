@@ -3,7 +3,7 @@
   <metadata>
     <id>WebSharper.BabylonJs</id>
     <title>WebSharper.BabylonJs 1.12</title>
-    <version>2.5.0</version>
+    <version>3.0.0-alpha</version>
     <authors>IntelliFactory</authors>
     <description>WebSharper bindings to Babylon JS (1.12)</description>
     <language>en-US</language>
@@ -12,7 +12,7 @@
     <tags>f# fsharp cross-platform 3d graphics</tags>
     <dependencies>
       <group>
-        <dependency id="WebSharper.TypeScript.Lib" version="2.5.0" />
+        <dependency id="WebSharper.TypeScript.Lib" version="3.0.0-alpha" />
       </group>
     </dependencies>
   </metadata>
