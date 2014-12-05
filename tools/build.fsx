@@ -16,10 +16,10 @@ type JQuery = IntelliFactory.WebSharper.JQuery.Resources.JQuery
 
 open IntelliFactory.Build
 let version =
-    BuildTool().PackageId("WebSharper.BabylonJS", "3.0-alpha")
-    |> PackageVersion.Full.Find
-    |> fun x -> x.ToString()
-printfn "Version: %s" version
+    let bt = BuildTool().PackageId("WebSharper.BabylonJS", "3.0-alpha")
+    let v = PackageVersion.Full.Find(bt).ToString()
+    let s = match PackageVersion.Current.Find(bt).Suffix with Some s -> "-" + s | None -> ""
+    v + s
 
 let dts = U.loc ["typings/babylon.d.ts"]
 let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/IntelliFactory.WebSharper.TypeScript.Lib.dll"]
