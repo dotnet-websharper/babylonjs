@@ -2,6 +2,10 @@
 #r "../packages/WebSharper/tools/net40/IntelliFactory.WebSharper.JQuery.dll"
 #r "../packages/WebSharper.TypeScript/tools/net40/IntelliFactory.WebSharper.TypeScript.dll"
 //#r "C:/dev/websharper.typescript/build/Release/IntelliFactory.WebSharper.TypeScript.dll"
+#I "../packages/NuGet.Core/lib/net40-client"
+#r "NuGet.Core"
+#r "../packages/IntelliFactory.Core/lib/net45/IntelliFactory.Core.dll"
+#r "../packages/IntelliFactory.Build/lib/net45/IntelliFactory.Build.dll"
 #load "utility.fsx"
 
 open System
@@ -9,6 +13,13 @@ open System.IO
 module C = IntelliFactory.WebSharper.TypeScript.Compiler
 module U = Utility
 type JQuery = IntelliFactory.WebSharper.JQuery.Resources.JQuery
+
+open IntelliFactory.Build
+let version =
+    BuildTool().PackageId("WebSharper.BabylonJS", "3.0-alpha")
+    |> PackageVersion.Full.Find
+    |> fun x -> x.ToString()
+printfn "Version: %s" version
 
 let dts = U.loc ["typings/babylon.d.ts"]
 let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/IntelliFactory.WebSharper.TypeScript.Lib.dll"]
@@ -61,11 +72,6 @@ let (|I|_|) (x: string) =
         match Int32.TryParse(n) with
         | true, r -> Some r
         | _ -> None
-
-let version =
-    match Environment.GetEnvironmentVariable("BUILD_NUMBER") with
-    | I k -> Version(3, 0, k, 0).ToString() + "-alpha"
-    | _ -> Version(3, 0, 0, 0).ToString() + "-alpha"
 
 let ok =
     match Environment.GetEnvironmentVariable("NuGetPackageOutputPath") with
