@@ -1,5 +1,5 @@
 #r "../packages/WebSharper.TypeScript/tools/net40/IntelliFactory.WebSharper.Core.dll"
-#r "../packages/WebSharper/tools/net40/IntelliFactory.WebSharper.JQuery.dll"
+#r "../packages/WebSharper/lib/net40/IntelliFactory.WebSharper.JQuery.dll"
 #r "../packages/WebSharper.TypeScript/tools/net40/IntelliFactory.WebSharper.TypeScript.dll"
 //#r "C:/dev/websharper.typescript/build/Release/IntelliFactory.WebSharper.TypeScript.dll"
 #I "../packages/NuGet.Core/lib/net40-client"
