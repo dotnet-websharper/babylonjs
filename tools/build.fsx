@@ -18,10 +18,9 @@ open IntelliFactory.Build
 
 let bt = BuildTool().PackageId("WebSharper.BabylonJS").VersionFrom("WebSharper")
 
-let version, asmVersion =
+let asmVersion =
     let v = PackageVersion.Full.Find(bt)
-    let s = match PackageVersion.Current.Find(bt).Suffix with Some s -> "-" + s | None -> ""
-    v.ToString() + s, sprintf "%i.%i.0.0" v.Major v.Minor
+    sprintf "%i.%i.0.0" v.Major v.Minor
 
 let dts = U.loc ["typings/babylon.d.ts"]
 let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/WebSharper.TypeScript.Lib.dll"]
@@ -67,18 +66,18 @@ match result.CompiledAssembly with
     printfn "Writing %s" out
     File.WriteAllBytes(out, asm.GetBytes())
 
-bt.Solution [
-    bt.NuGet.CreatePackage()
-        .Configure(fun c ->
-            { c with
-                Authors = ["IntelliFactory"]
-                Title = Some "WebSharper.BabylonJs 1.12"
-                LicenseUrl = Some "http://websharper.com/licensing"
-                ProjectUrl = Some "http://websharper.com"
-                Description = "WebSharper bindings to Babylon JS (1.12)"
-                RequiresLicenseAcceptance = true })
-        .AddDependency("WebSharper.TypeScript.Lib")
-        .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
-        .AddFile("README.md", "docs/README.md")
-]
-|> bt.Dispatch
+    bt.Solution [
+        bt.NuGet.CreatePackage()
+            .Configure(fun c ->
+                { c with
+                    Authors = ["IntelliFactory"]
+                    Title = Some "WebSharper.BabylonJs 1.12"
+                    LicenseUrl = Some "http://websharper.com/licensing"
+                    ProjectUrl = Some "http://websharper.com"
+                    Description = "WebSharper bindings to Babylon JS (1.12)"
+                    RequiresLicenseAcceptance = true })
+            .AddDependency("WebSharper.TypeScript.Lib")
+            .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
+            .AddFile("README.md", "docs/README.md")
+    ]
+    |> bt.Dispatch
