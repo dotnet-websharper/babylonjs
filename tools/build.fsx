@@ -15,8 +15,10 @@ module U = Utility
 type JQuery = WebSharper.JQuery.Resources.JQuery
 
 open IntelliFactory.Build
+
+let bt = BuildTool().PackageId("WebSharper.BabylonJS").VersionFrom("WebSharper")
+
 let version, asmVersion =
-    let bt = BuildTool().PackageId("WebSharper.BabylonJS").VersionFrom("WebSharper")
     let v = PackageVersion.Full.Find(bt)
     let s = match PackageVersion.Current.Find(bt).Suffix with Some s -> "-" + s | None -> ""
     v.ToString() + s, sprintf "%i.%i.0.0" v.Major v.Minor
@@ -65,20 +67,18 @@ match result.CompiledAssembly with
     printfn "Writing %s" out
     File.WriteAllBytes(out, asm.GetBytes())
 
-let (|I|_|) (x: string) =
-    match x with
-    | null | "" -> None
-    | n ->
-        match Int32.TryParse(n) with
-        | true, r -> Some r
-        | _ -> None
-
-let ok =
-    match Environment.GetEnvironmentVariable("NuGetPackageOutputPath") with
-    | null | "" ->
-        U.nuget (sprintf "pack -out build/ -version %s BabylonJs.nuspec" version)
-    | path ->
-        U.nuget (sprintf "pack -out %s -version %s BabylonJs.nuspec" path version)
-
-printfn "pack: %b" ok
-if not ok then exit 1 else exit 0
+bt.Solution [
+    bt.NuGet.CreatePackage()
+        .Configure(fun c ->
+            { c with
+                Authors = ["IntelliFactory"]
+                Title = Some "WebSharper.BabylonJs 1.12"
+                LicenseUrl = Some "http://websharper.com/licensing"
+                ProjectUrl = Some "http://websharper.com"
+                Description = "WebSharper bindings to Babylon JS (1.12)"
+                RequiresLicenseAcceptance = true })
+        .AddDependency("WebSharper.TypeScript.Lib")
+        .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
+        .AddFile("README.md", "docs/README.md")
+]
+|> bt.Dispatch
