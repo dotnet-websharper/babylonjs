@@ -3,7 +3,7 @@
   <metadata>
     <id>WebSharper.BabylonJs</id>
     <title>WebSharper.BabylonJs 1.12</title>
-    <version>3.0.0</version>
+    <version>3.0.0-thiswillbereplaced</version>
     <authors>IntelliFactory</authors>
     <description>WebSharper bindings to Babylon JS (1.12)</description>
     <language>en-US</language>
