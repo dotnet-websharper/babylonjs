@@ -1,6 +1,6 @@
-#r "../packages/WebSharper.TypeScript/tools/net40/WebSharper.Core.dll"
-#r "../packages/WebSharper/lib/net40/WebSharper.JQuery.dll"
-#r "../packages/WebSharper.TypeScript/tools/net40/WebSharper.TypeScript.dll"
+#r "../packages/Zafir.TypeScript/tools/net40/WebSharper.Core.dll"
+#r "../packages/Zafir/lib/net40/WebSharper.JQuery.dll"
+#r "../packages/Zafir.TypeScript/tools/net40/WebSharper.TypeScript.dll"
 //#r "C:/dev/websharper.typescript/build/Release/WebSharper.TypeScript.dll"
 #I "../packages/NuGet.Core/lib/net40-client"
 #r "NuGet.Core"
@@ -23,7 +23,7 @@ let asmVersion =
     sprintf "%i.%i.0.0" v.Major v.Minor
 
 let dts = U.loc ["typings/babylon.d.ts"]
-let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/WebSharper.TypeScript.Lib.dll"]
+let lib = U.loc ["packages/Zafir.TypeScript.Lib/lib/net40/WebSharper.TypeScript.Lib.dll"]
 let snk = U.loc [Environment.GetEnvironmentVariable("INTELLIFACTORY"); "keys/IntelliFactory.snk"]
 
 let fsCore =
