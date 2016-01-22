@@ -1,6 +1,6 @@
 # WebSharper.BabylonJs
 
-Version: 1.11
+Version: 1.12
 
 ## Updating
 
@@ -10,6 +10,6 @@ Change the version in the following files:
     BabylonJs.nuspec
     README.md
     
-Update the following files:
+Replace the following files with the version you are adding:
 
-    babylon.1.11.js
+    babylon.x.yy.js
