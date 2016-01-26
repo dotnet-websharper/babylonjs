@@ -1,6 +1,6 @@
 # WebSharper.BabylonJs
 
-Version: 1.12
+Version: 2.2
 
 ## Updating
 
