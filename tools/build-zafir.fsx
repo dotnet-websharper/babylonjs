@@ -22,7 +22,7 @@ let asmVersion =
     let v = PackageVersion.Full.Find(bt)
     sprintf "%i.%i.0.0" v.Major v.Minor
 
-let dts = U.loc ["typings/babylon.d.ts"]
+let dts = U.loc ["typings/babylon.2.2.d.ts"]
 let lib = U.loc ["packages/Zafir.TypeScript.Lib/lib/net40/WebSharper.TypeScript.Lib.dll"]
 let snk = U.loc [Environment.GetEnvironmentVariable("INTELLIFACTORY"); "keys/IntelliFactory.snk"]
 
@@ -42,11 +42,11 @@ let opts =
             Verbosity = C.Level.Verbose
             EmbeddedResources =
                 [
-                    C.EmbeddedResource.FromFile("babylon.1.12.js")
+                    C.EmbeddedResource.FromFile("babylon.2.2.js")
                 ]
             WebSharperResources =
                 [
-                    C.WebSharperResource.Create("Scripts", "babylon.1.12.js")
+                    C.WebSharperResource.Create("Scripts", "babylon.2.2.js")
                 ]
     }
 
@@ -71,10 +71,10 @@ match result.CompiledAssembly with
             .Configure(fun c ->
                 { c with
                     Authors = ["IntelliFactory"]
-                    Title = Some "Zafir.BabylonJs 1.12"
+                    Title = Some "Zafir.BabylonJs 2.2"
                     LicenseUrl = Some "http://websharper.com/licensing"
                     ProjectUrl = Some "http://websharper.com"
-                    Description = "WebSharper bindings to Babylon JS (1.12)"
+                    Description = "WebSharper bindings to Babylon JS (2.2)"
                     RequiresLicenseAcceptance = true })
             .AddDependency("Zafir.TypeScript.Lib", forceFoundVersion = true)
             .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
