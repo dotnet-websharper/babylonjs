@@ -56,6 +56,8 @@ let result =
 for msg in result.Messages do
     printfn "%O" msg
 
+let tlibVerson = bt.NuGetResolver.FindLatestVersion("Zafir.TypeScript.Lib", true).Value.Version.ToString()
+
 match result.CompiledAssembly with
 | None -> ()
 | Some asm ->
@@ -76,7 +78,7 @@ match result.CompiledAssembly with
                     ProjectUrl = Some "http://websharper.com"
                     Description = "WebSharper bindings to Babylon JS (2.2)"
                     RequiresLicenseAcceptance = true })
-            .AddDependency("Zafir.TypeScript.Lib", forceFoundVersion = true)
+            .AddDependency("Zafir.TypeScript.Lib", tlibVerson, forceFoundVersion = true)
             .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
             .AddFile("README.md", "docs/README.md")
     ]
