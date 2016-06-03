@@ -56,7 +56,7 @@ let result =
 for msg in result.Messages do
     printfn "%O" msg
 
-let tlibVerson = bt.NuGetResolver.FindLatestVersion("Zafir.TypeScript.Lib", true).Value.Version.ToString()
+let tlibVerson = bt.NuGetResolver.FindLatestVersion("Zafir.TypeScript.Lib", true).Value.ToString()
 
 match result.CompiledAssembly with
 | None -> ()
