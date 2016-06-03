@@ -34,7 +34,7 @@ let fsCore =
 
 let opts =
     {
-        C.Options.Create("Zafir.BabylonJs", [dts]) with
+        C.Options.Create("WebSharper.BabylonJs", [dts]) with
             AssemblyVersion = Some (Version asmVersion)
 //            Renaming = C.Renaming.RemovePrefix ""
             References = [C.ReferenceAssembly.File lib; C.ReferenceAssembly.File fsCore]
@@ -73,7 +73,7 @@ match result.CompiledAssembly with
             .Configure(fun c ->
                 { c with
                     Authors = ["IntelliFactory"]
-                    Title = Some "Zafir.BabylonJs 2.2"
+                    Title = Some "WebSharper.BabylonJs 2.2"
                     LicenseUrl = Some "http://websharper.com/licensing"
                     ProjectUrl = Some "http://websharper.com"
                     Description = "WebSharper bindings to Babylon JS (2.2)"
