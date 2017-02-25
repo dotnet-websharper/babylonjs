@@ -84,7 +84,7 @@ match result.CompiledAssembly with
                     ProjectUrl = Some "http://websharper.com"
                     Description = "WebSharper bindings to Babylon JS (2.2)"
                     RequiresLicenseAcceptance = true })
-            .AddDependency("Zafir.TypeScript.Lib", tlibVerson, forceFoundVersion = true)
+            .AddDependency("Zafir.TypeScript.Lib", tlibVersion, forceFoundVersion = true)
             .AddFile("build/WebSharper.BabylonJs.dll", "lib/net40/WebSharper.BabylonJs.dll")
             .AddFile("README.md", "docs/README.md")
     ]
