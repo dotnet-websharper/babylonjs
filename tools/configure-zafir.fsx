@@ -20,5 +20,8 @@ let bt = BuildTool().PackageId("Zafir.BabylonJS").VersionFrom("Zafir")
 let version = PackageVersion.Full.Find(bt).ToString()
 File.WriteAllText(__SOURCE_DIRECTORY__ + "/version.txt", version)
 
+let tlibVerson = bt.NuGetResolver.FindLatestVersion("Zafir.TypeScript.Lib", true).Value.ToString()
+File.WriteAllText(__SOURCE_DIRECTORY__ + "/tlib-version.txt", tlibVersion)
+
 printfn "configure: %b" ok
 if not ok then exit 1 else exit 0

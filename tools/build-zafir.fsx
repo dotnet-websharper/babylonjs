@@ -62,7 +62,7 @@ let result =
 for msg in result.Messages do
     printfn "%O" msg
 
-let tlibVerson = bt.NuGetResolver.FindLatestVersion("Zafir.TypeScript.Lib", true).Value.ToString()
+let tlibVerson = File.ReadAllText(__SOURCE_DIRECTORY__ + "/tlib-version.txt")
 
 match result.CompiledAssembly with
 | None -> ()
