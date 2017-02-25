@@ -1,13 +1,7 @@
-^build/
-^packages/
-^tools/packages/
-^node_modules/
-^PhoneGapDemo/packages/
-^PhoneGapDemo/demo/plugins/org.*
-bin/Debug/
-bin/html/
-obj/Debug/
-\.suo$
-platforms/android
-Content/
-www/websharper/
+syntax: glob
+Tests/*
+build/*
+packages/*
+tools/*.exe
+tools/*.dll
+version.txt
