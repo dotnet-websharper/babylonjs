@@ -62,7 +62,7 @@ let result =
 for msg in result.Messages do
     printfn "%O" msg
 
-let tlibVerson = File.ReadAllText(__SOURCE_DIRECTORY__ + "/tlib-version.txt")
+let tlibVersion = File.ReadAllText(__SOURCE_DIRECTORY__ + "/tlib-version.txt")
 
 match result.CompiledAssembly with
 | None -> ()
