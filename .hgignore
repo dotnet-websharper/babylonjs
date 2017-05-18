@@ -5,3 +5,4 @@ packages/*
 tools/*.exe
 tools/*.dll
 version.txt
+tools/*version.txt
