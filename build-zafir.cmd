@@ -6,10 +6,11 @@ tools\NuGet\NuGet install Zafir.TypeScript -pre -o packages -excludeVersion -noc
 tools\NuGet\NuGet install Zafir.TypeScript.Lib -pre -o packages -excludeVersion -nocache
 tools\NuGet\NuGet install Zafir.Knockout -pre -o packages -excludeVersion -nocache
 tools\NuGet\NuGet install IntelliFactory.Build -pre -o packages -excludeVersion -nocache
-tools\NuGet\NuGet install FSharp.Compiler.Tools -version 4.0.1.21 -o packages -excludeVersion -nocache
+tools\NuGet\NuGet install FSharp.Compiler.Tools -version 4.1.17 -o packages -excludeVersion -nocache
 
 packages\FSharp.Compiler.Tools\tools\fsi.exe --exec tools/configure-zafir.fsx
 
+xcopy /y /q packages\Zafir.TypeScript\tools\net40\FSharp.Core.dll tools
 xcopy /y /q packages\Zafir.TypeScript\tools\net40\WebSharper.Core.dll tools
 xcopy /y /q packages\Zafir.TypeScript\tools\net40\WebSharper.TypeScript.dll tools
 xcopy /y /q packages\Zafir.TypeScript\tools\net40\WebSharper.Core.JavaScript.dll tools
