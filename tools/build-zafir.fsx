@@ -31,12 +31,7 @@ let asmVersion =
 let dts = U.loc ["typings/babylon.2.2.d.ts"]
 let lib = U.loc ["packages/WebSharper.TypeScript.Lib/lib/net40/WebSharper.TypeScript.Lib.dll"]
 let snk = U.loc [Environment.GetEnvironmentVariable("INTELLIFACTORY"); "keys/IntelliFactory.snk"]
-
-let fsCore =
-    U.loc [
-        Environment.GetEnvironmentVariable("ProgramFiles(x86)")
-        "Reference Assemblies/Microsoft/FSharp/.NETFramework/v4.0/4.3.0.0/FSharp.Core.dll"
-    ]
+let fsCore = U.loc ["packages/FSharp.Core/lib/net45/FSharp.Core.dll"]
 
 let opts =
     {
