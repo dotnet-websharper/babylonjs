@@ -15,7 +15,6 @@ tags
     Web JavaScript F# C# 3D WebGL graphics
 files
     ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.dll ==> lib/netstandard2.0
-    ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.websharper ==> lib/netstandard2.0
     ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.xml ==> lib/netstandard2.0
 dependencies
         WebSharper ~> LOCKEDVERSION:[3]
