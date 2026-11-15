@@ -125,7 +125,7 @@ scene.OnPointerObservable.Add(fun info ->
         if not (isNull pick) && pick.Hit then
             let mesh = pick.PickedMesh
             if not (isNull mesh) then
-                Console.Log("picked", mesh.Name, pick.PickedPoint))
+                Console.Log("picked " + mesh.Name))
 ```
 
 ### Dynamic textures
@@ -189,8 +189,8 @@ dotnet paket install
 dotnet build WebSharper.BabylonJs.Sample/WebSharper.BabylonJs.Sample.fsproj -c Release
 ```
 
-The binding and Extensions-less test sample target `netstandard2.0`; the
-WebSharper 11 compiler needs the .NET 11 SDK.
+The binding and the sample target `netstandard2.0`; the WebSharper 11 compiler
+needs the .NET 11 SDK.
 
 ## Pack
 
