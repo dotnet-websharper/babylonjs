@@ -1,0 +1,24 @@
+STORAGE: NONE
+STRATEGY: MIN
+RESTRICTION: == netstandard2.0
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    FSharp.Core (6.0)
+    HtmlAgilityPack (1.12.4)
+    System.Reflection.Emit.ILGeneration (4.7)
+    System.Reflection.Emit.Lightweight (4.7)
+      System.Reflection.Emit.ILGeneration (>= 4.7)
+    WebSharper (11.0.0.695-preview.1)
+      FSharp.Core (>= 6.0)
+      System.Reflection.Emit.Lightweight (>= 4.7)
+    WebSharper.FSharp (11.0.0.695-preview.1)
+      WebSharper (11.0.0.695-preview.1)
+    WebSharper.UI (11.0.0.695-preview.1)
+      HtmlAgilityPack (>= 1.12.4)
+      WebSharper (>= 11.0.0.695-preview.1 < 11.0.1-preview)
+
+GROUP wsbuild
+
+GIT
+  remote: https://github.com/dotnet-websharper/build-script
+     (6ecf97f00d4afc53204d3277c355fc69c6f8b812)

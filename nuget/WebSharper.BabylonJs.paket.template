@@ -1,0 +1,21 @@
+type file
+id WebSharper.BabylonJs
+authors
+    IntelliFactory
+owners
+    IntelliFactory
+repositoryType git
+repositoryUrl https://github.com/dotnet-websharper/babylonjs/
+licenseUrl https://github.com/dotnet-websharper/babylonjs/blob/main/LICENSE.md
+iconUrl https://github.com/dotnet-websharper/core/raw/websharper50/tools/WebSharper.png
+projectUrl https://github.com/dotnet-websharper/babylonjs
+description
+    WebSharper bindings for Babylon.js 9.x (@babylonjs/core)
+tags
+    Web JavaScript F# C# 3D WebGL graphics
+files
+    ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.dll ==> lib/netstandard2.0
+    ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.websharper ==> lib/netstandard2.0
+    ../WebSharper.BabylonJs/bin/Release/netstandard2.0/WebSharper.BabylonJs.xml ==> lib/netstandard2.0
+dependencies
+        WebSharper ~> LOCKEDVERSION:[3]
