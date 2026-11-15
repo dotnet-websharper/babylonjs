@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <WebSharperProject>binding</WebSharperProject>
+        <WebSharperSourceMap>false</WebSharperSourceMap>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Product>WebSharper.BabylonJs 9.36.0+</Product>
+        <Title>https://github.com/dotnet-websharper/babylonjs/</Title>
+        <Company>IntelliFactory</Company>
+        <Copyright>(c) 2026 IntelliFactory</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="@babylonjs/core" Version="&gt;= 9.36.0 &lt; 10.0.0" ResolutionStrategy="Max" />
+        </NpmDependencies>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Main.fs" />
+        <None Include="paket.references" />
+    </ItemGroup>
+
+    <Import Project="..\paket-files\wsbuild\github.com\dotnet-websharper\build-script\WebSharper.Fake.targets" Condition="Exists('..\paket-files\wsbuild\github.com\dotnet-websharper\build-script\WebSharper.Fake.targets')" />
+    <Import Project="..\.paket\Paket.Restore.targets" />
+
+</Project>
